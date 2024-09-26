@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AR.js with GPS Markers</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.1.8/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-camera gps-camera rotation-reader></a-camera>
+
+      <a-entity
+        gps-entity-place="latitude: 37.7749; longitude: -122.4194;"
+        scale="5 5 5"
+      >
+        <a-image src="your-image-url.jpg"></a-image>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
